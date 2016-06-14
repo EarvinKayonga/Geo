@@ -12,5 +12,8 @@
     "geo"
   ],
   "author": "earvinkayonga",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "instagram-node": "^0.5.8"
+  }
 }
