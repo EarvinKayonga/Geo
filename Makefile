@@ -7,7 +7,7 @@ REPO = geo
 NAME = geo
 INSTANCE = default
 
-.PHONY: build push shell run start stop rm release
+.PHONY: build push shell run start stop rm release demon
 
 build:
 	docker build -t $(NS)/$(REPO):$(VERSION) .
@@ -32,5 +32,8 @@ rm:
 
 release: build
 	make push -e VERSION=$(VERSION)
+
+demon:
+	nodemon server.js
 
 default: build

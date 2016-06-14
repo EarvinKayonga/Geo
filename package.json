@@ -16,5 +16,8 @@
   "dependencies": {
     "express": "^4.13.4",
     "instagram-node": "^0.5.8"
+  },
+  "devDependencies": {
+    "nodemon": "^1.9.2"
   }
 }
