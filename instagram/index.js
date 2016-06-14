@@ -33,12 +33,15 @@ router.get('/', function (req, res) {
   if (req.cookies.instaToken) {
     instagramApi.use({ access_token: req.cookies.instaToken });
     return instagramApi.user_self_media_recentAsync(50)
-    .spread(function (medias, pagination, remaining, limit) {
+    .spread(function (err, result, remaining, limit) {
       return Bluebird.all([
-        /*instagramApi.mediaAsync(medias[Math.floor(Math.random() * medias.length -1) + 1].id),
-        instagramApi.mediaAsync(medias[Math.floor(Math.random() * medias.length -1) + 1].id),
-        instagramApi.mediaAsync(medias[Math.floor(Math.random() * medias.length -1) + 1].id)*/
-      ]);
+        instagramApi.tag_search("paris", function(err, result, remaining, limit){
+          console.log(result, result, remaining, limit, err);
+          return result
+        }),
+        /*instagramApi.geography_media_recent("geography_id"),
+        instagramApi.location('location_id')*/
+      ])
     })
     .spread(function (image1, image2, image3) {
       res.render('index', {
