@@ -14,8 +14,12 @@
   "author": "earvinkayonga",
   "license": "MIT",
   "dependencies": {
+    "bluebird": "^3.4.0",
+    "body-parser": "^1.15.1",
+    "cookie-parser": "^1.4.3",
     "express": "^4.13.4",
-    "instagram-node": "^0.5.8"
+    "instagram-node": "^0.5.8",
+    "jade": "^1.11.0"
   },
   "devDependencies": {
     "nodemon": "^1.9.2"

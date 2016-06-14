@@ -1,0 +1,4 @@
+.postcard-preview {border: 2px solid #ccc; padding: 10px; position: relative;}
+.postcard-preview .image1 {width: 66%; float: left;}
+.postcard-preview .image2 {width: 32%; float: right;}
+.postcard-preview .image3 {width: 32%; float: right; margin-top: 2%;}

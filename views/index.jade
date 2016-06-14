@@ -1,0 +1,73 @@
+extends layout
+
+block content
+
+  if showLogin
+    div.row
+      div.col-md-12.text-center
+        h1 Create a Postcard with your Instagram Photos
+        p This is a demo that uses the Instagram API and Lob's Print API to print and mail a postcard from your recent photos.
+        p In order to use the demo you must first authorize Instagram.
+        a(href="/authorize-user" class="btn btn-primary") Login to Instagram
+  else
+    div.row
+      div.col-md-6
+        h1 Preview
+        div.postcard-preview.clearfix
+          img(src= image1, width="250px", class='image1')
+          img(src= image2, width="250px", class='image2')
+          img(src= image3, width="250px", class='image3')
+        div.text-center
+          br
+          a.btn.btn-default(href="/") New Random Images
+
+      div.col-md-6
+        h1 Create
+        form(action="/create-postcard", method="post")
+          div(class="form-group col-md-12")
+            label Name
+            input(
+              type="text"
+              class="form-control"
+              name="name"
+            )
+          div(class="form-group col-md-12")
+            label Address
+            input(
+              type="text"
+              class="form-control"
+              name="address"
+            )
+          div(class="form-group col-md-4")
+            label City
+            input(
+              type="text"
+              class="form-control"
+              name="city"
+            )
+          div(class="form-group col-md-4")
+            label State (2 Characters)
+            input(
+              type="text"
+              class="form-control"
+              name="state"
+              maxlength=2
+            )
+          div(class="form-group col-md-4")
+            label Zip
+            input(
+              type="text"
+              class="form-control"
+              name="zip"
+            )
+          div(class="form-group col-md-12")
+            label Message (Max 350 Characters)
+            textarea(
+              class="form-control"
+              name="message"
+            )
+          div(class="form-group col-md-12")
+            input(type="hidden", value=image1, name="image1")
+            input(type="hidden", value=image2, name="image2")
+            input(type="hidden", value=image3, name="image3")
+            button(type="submit", class="btn btn-primary") Create Postcard
