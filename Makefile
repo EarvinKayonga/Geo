@@ -4,7 +4,7 @@ NS = earvin
 VERSION ?= latest
 
 REPO = geo
-NAME = earvin/geo
+NAME = geo
 INSTANCE = default
 
 .PHONY: build push shell run start stop rm release

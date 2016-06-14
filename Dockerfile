@@ -7,4 +7,4 @@ WORKDIR     src/
 
 RUN         npm install
 
-CMD         ["-e",  "server.js"]
+CMD         [ "server.js"]
